@@ -12,7 +12,7 @@ def main(args):
         train(train_csv_path=args.train_csv)
         return
 
-    df = load_dataset(args.eval_csv)
+    df = load_dataset(args.input_csv)
 
     df_tr = df[df["language"] == "tr"].copy()
     df_it = df[df["language"] == "it"].copy()
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--train", default=False, action="store_true", help="If set, trains all models from scratch")
     parser.add_argument("--train_csv", type=str, default=DEFAULT_TRAIN_CSV, help="Path to training file")
-    parser.add_argument("--eval_csv", type=str, default=DEFAULT_EVAL_CSV, help="Path to evaluation file")
+    parser.add_argument("--input_csv", type=str, default=DEFAULT_INPUT_CSV, help="Path to input file")
     parser.add_argument("--output_csv", type=str, default=DEFAULT_OUTPUT_CSV, help="Path to output predictions file")
     parser.add_argument("--xlmr_model", type=str, default=DEFAULT_XLMR_MODEL, help="Path to the XLM-R model")
     parser.add_argument("--turkish_model", type=str, default=DEFAULT_TURKISH_MODEL, help="Path to the Turkish model")

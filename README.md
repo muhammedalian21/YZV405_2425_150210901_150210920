@@ -36,7 +36,7 @@ To run inference on a dataset and output predictions:
 
 ``` bash
 python main.py \
-    --eval_csv path/to/eval.csv \
+    --input_csv path/to/eval.csv \
     --output_csv path/to/output.csv
 ``` 
 
@@ -101,7 +101,7 @@ All default paths and label mappings are defined in `config.py`. You can overrid
 
 ``` bash
 python main.py \
-    --eval_csv eval_w-o_labels.csv \
-    --output_csv eval_predictions.csv
+    --input_csv test_w-o_labels.csv \
+    --output_csv prediction.csv
 ``` 
 
